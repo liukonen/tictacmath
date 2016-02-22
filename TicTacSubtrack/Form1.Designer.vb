@@ -59,10 +59,21 @@ Partial Class Form1
         Me.Button9 = New System.Windows.Forms.Button()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SubtractionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdditionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MultiplicationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AllowNegativesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.YesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MaxNumbersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripSeparator()
+        Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -72,6 +83,7 @@ Partial Class Form1
         Me.Panel7.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel9.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -299,41 +311,96 @@ Partial Class Form1
         resources.ApplyResources(Me.Label9, "Label9")
         Me.Label9.Name = "Label9"
         '
-        'RadioButton1
+        'MenuStrip1
         '
-        resources.ApplyResources(Me.RadioButton1, "RadioButton1")
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
+        Me.MenuStrip1.Name = "MenuStrip1"
         '
-        'RadioButton2
+        'ToolStripMenuItem1
         '
-        resources.ApplyResources(Me.RadioButton2, "RadioButton2")
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TypeToolStripMenuItem, Me.AllowNegativesToolStripMenuItem, Me.MaxNumbersToolStripMenuItem, Me.ExitToolStripMenuItem, Me.ExitToolStripMenuItem1})
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        resources.ApplyResources(Me.ToolStripMenuItem1, "ToolStripMenuItem1")
         '
-        'RadioButton3
+        'TypeToolStripMenuItem
         '
-        resources.ApplyResources(Me.RadioButton3, "RadioButton3")
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.TypeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SubtractionToolStripMenuItem, Me.AdditionToolStripMenuItem, Me.MultiplicationToolStripMenuItem})
+        Me.TypeToolStripMenuItem.Name = "TypeToolStripMenuItem"
+        resources.ApplyResources(Me.TypeToolStripMenuItem, "TypeToolStripMenuItem")
         '
-        'CheckBox1
+        'SubtractionToolStripMenuItem
         '
-        resources.ApplyResources(Me.CheckBox1, "CheckBox1")
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.SubtractionToolStripMenuItem.Checked = True
+        Me.SubtractionToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.SubtractionToolStripMenuItem.Name = "SubtractionToolStripMenuItem"
+        resources.ApplyResources(Me.SubtractionToolStripMenuItem, "SubtractionToolStripMenuItem")
+        '
+        'AdditionToolStripMenuItem
+        '
+        Me.AdditionToolStripMenuItem.Name = "AdditionToolStripMenuItem"
+        resources.ApplyResources(Me.AdditionToolStripMenuItem, "AdditionToolStripMenuItem")
+        '
+        'MultiplicationToolStripMenuItem
+        '
+        Me.MultiplicationToolStripMenuItem.Name = "MultiplicationToolStripMenuItem"
+        resources.ApplyResources(Me.MultiplicationToolStripMenuItem, "MultiplicationToolStripMenuItem")
+        '
+        'AllowNegativesToolStripMenuItem
+        '
+        Me.AllowNegativesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.YesToolStripMenuItem, Me.NoToolStripMenuItem})
+        Me.AllowNegativesToolStripMenuItem.Name = "AllowNegativesToolStripMenuItem"
+        resources.ApplyResources(Me.AllowNegativesToolStripMenuItem, "AllowNegativesToolStripMenuItem")
+        '
+        'YesToolStripMenuItem
+        '
+        Me.YesToolStripMenuItem.Name = "YesToolStripMenuItem"
+        resources.ApplyResources(Me.YesToolStripMenuItem, "YesToolStripMenuItem")
+        '
+        'NoToolStripMenuItem
+        '
+        Me.NoToolStripMenuItem.Checked = True
+        Me.NoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.NoToolStripMenuItem.Name = "NoToolStripMenuItem"
+        resources.ApplyResources(Me.NoToolStripMenuItem, "NoToolStripMenuItem")
+        '
+        'MaxNumbersToolStripMenuItem
+        '
+        Me.MaxNumbersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SToolStripMenuItem, Me.SToolStripMenuItem1, Me.SToolStripMenuItem2})
+        Me.MaxNumbersToolStripMenuItem.Name = "MaxNumbersToolStripMenuItem"
+        resources.ApplyResources(Me.MaxNumbersToolStripMenuItem, "MaxNumbersToolStripMenuItem")
+        '
+        'SToolStripMenuItem
+        '
+        Me.SToolStripMenuItem.Checked = True
+        Me.SToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.SToolStripMenuItem.Name = "SToolStripMenuItem"
+        resources.ApplyResources(Me.SToolStripMenuItem, "SToolStripMenuItem")
+        '
+        'SToolStripMenuItem1
+        '
+        Me.SToolStripMenuItem1.Name = "SToolStripMenuItem1"
+        resources.ApplyResources(Me.SToolStripMenuItem1, "SToolStripMenuItem1")
+        '
+        'SToolStripMenuItem2
+        '
+        Me.SToolStripMenuItem2.Name = "SToolStripMenuItem2"
+        resources.ApplyResources(Me.SToolStripMenuItem2, "SToolStripMenuItem2")
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        resources.ApplyResources(Me.ExitToolStripMenuItem, "ExitToolStripMenuItem")
+        '
+        'ExitToolStripMenuItem1
+        '
+        Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
+        resources.ApplyResources(Me.ExitToolStripMenuItem1, "ExitToolStripMenuItem1")
         '
         'Form1
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.RadioButton3)
-        Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel7)
@@ -343,7 +410,9 @@ Partial Class Form1
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Panel1.ResumeLayout(False)
@@ -364,6 +433,8 @@ Partial Class Form1
         Me.Panel8.PerformLayout()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -396,10 +467,6 @@ Partial Class Form1
     Friend WithEvents Panel9 As Panel
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
@@ -409,4 +476,19 @@ Partial Class Form1
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
     Friend WithEvents Button9 As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents TypeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SubtractionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AdditionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MultiplicationToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AllowNegativesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents YesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MaxNumbersToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents SToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripSeparator
+    Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
 End Class
