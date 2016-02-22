@@ -163,7 +163,7 @@ Public Class Form1
     Private Sub ParseNumbers(S As String, ByRef Number1 As Integer, ByRef Number2 As Integer)
         Dim Numbers() As String = S.Split(Environment.NewLine & "-")
         Number1 = Integer.Parse(Numbers(0))
-        Number2 = Integer.Parse(Numbers(1).Replace("-", ""))
+        Number2 = Integer.Parse(Numbers(1).Substring(2))
     End Sub
 
     Private Sub Win(TextToSpeak As String)
