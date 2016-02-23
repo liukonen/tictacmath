@@ -19,6 +19,7 @@ Public Class Form1
         Add
         Subtract
         Multiply
+        Divid
     End Enum
 #End Region
 
@@ -30,6 +31,8 @@ Public Class Form1
                     Return "x"c
                 Case GameType.Add
                     Return "+"c
+                Case GameType.Divid
+                    Return "÷"c
                 Case Else
                     Return "-"c
             End Select
@@ -43,6 +46,8 @@ Public Class Form1
                     Return " plus "
                 Case GameType.Multiply
                     Return " times "
+                Case GameType.Divid
+                    Return " divided by "
                 Case Else
                     Return " minus "
             End Select
@@ -93,6 +98,7 @@ Public Class Form1
             L.ForeColor = Color.Black
             Dim Number1 As Integer = rand.Next(1, Max)
             Dim Number2 As Integer = rand.Next(1, Max)
+            If ActiveGameType = GameType.Divid Then Number1 = Number1 * Number2
             If Not allowNegatives AndAlso Number1 < Number2 Then
                 L.Text = String.Concat(Number2.ToString, Environment.NewLine, GameOperator, Number1.ToString)
             Else
@@ -103,12 +109,14 @@ Public Class Form1
         Button1.Visible = True : Button2.Visible = True : Button3.Visible = True : Button4.Visible = True : Button5.Visible = True : Button6.Visible = True : Button7.Visible = True : Button8.Visible = True : Button9.Visible = True
     End Sub
 
-    Private Function CalculateValue(number1 As Integer, number2 As Integer)
+    Private Function CalculateValue(number1 As Integer, number2 As Integer) As Integer
         Select Case ActiveGameType
             Case GameType.Add
                 Return number1 + number2
             Case GameType.Multiply
                 Return number1 * number2
+            Case GameType.Divid
+                Return Convert.ToInt32(number1 / number2)
             Case Else
                 Return number1 - number2
         End Select
@@ -155,9 +163,9 @@ Public Class Form1
     End Sub
 
     Private Sub ParseNumbers(S As String, ByRef Number1 As Integer, ByRef Number2 As Integer)
-        Dim Numbers() As String = S.Split(Environment.NewLine & "-")
+        Dim Numbers() As String = S.Split(GameOperator)
         Number1 = Integer.Parse(Numbers(0))
-        Number2 = Integer.Parse(Numbers(1).Substring(2))
+        Number2 = Integer.Parse(Numbers(1).Replace(GameOperator, " "c))
     End Sub
 
     Private Sub Win(TextToSpeak As String)
@@ -210,12 +218,13 @@ Public Class Form1
         PopulateField()
     End Sub
 
-    Private Sub SubtractionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubtractionToolStripMenuItem.Click, AdditionToolStripMenuItem.Click, MultiplicationToolStripMenuItem.Click
+    Private Sub SubtractionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubtractionToolStripMenuItem.Click, AdditionToolStripMenuItem.Click, MultiplicationToolStripMenuItem.Click, DivisionToolStripMenuItem.Click
         Dim castSender As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
         Dim arrayList As New Generic.LinkedList(Of ToolStripMenuItem)({SubtractionToolStripMenuItem, AdditionToolStripMenuItem, MultiplicationToolStripMenuItem})
         If castSender Is SubtractionToolStripMenuItem Then ActiveGameType = GameType.Subtract
         If castSender Is AdditionToolStripMenuItem Then ActiveGameType = GameType.Add
         If castSender Is MultiplicationToolStripMenuItem Then ActiveGameType = GameType.Multiply
+        If castSender Is DivisionToolStripMenuItem Then ActiveGameType = GameType.Divid
         For Each T As ToolStripMenuItem In arrayList
             T.Checked = (castSender Is T)
         Next
@@ -241,6 +250,8 @@ Public Class Form1
     Private Sub ExitToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem1.Click
         Me.Close()
     End Sub
+
+
 #End Region
 
 End Class

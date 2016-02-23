@@ -65,6 +65,7 @@ Partial Class Form1
         Me.SubtractionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdditionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MultiplicationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DivisionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AllowNegativesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.YesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -325,7 +326,7 @@ Partial Class Form1
         '
         'TypeToolStripMenuItem
         '
-        Me.TypeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SubtractionToolStripMenuItem, Me.AdditionToolStripMenuItem, Me.MultiplicationToolStripMenuItem})
+        Me.TypeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SubtractionToolStripMenuItem, Me.AdditionToolStripMenuItem, Me.MultiplicationToolStripMenuItem, Me.DivisionToolStripMenuItem})
         Me.TypeToolStripMenuItem.Name = "TypeToolStripMenuItem"
         resources.ApplyResources(Me.TypeToolStripMenuItem, "TypeToolStripMenuItem")
         '
@@ -345,6 +346,11 @@ Partial Class Form1
         '
         Me.MultiplicationToolStripMenuItem.Name = "MultiplicationToolStripMenuItem"
         resources.ApplyResources(Me.MultiplicationToolStripMenuItem, "MultiplicationToolStripMenuItem")
+        '
+        'DivisionToolStripMenuItem
+        '
+        Me.DivisionToolStripMenuItem.Name = "DivisionToolStripMenuItem"
+        resources.ApplyResources(Me.DivisionToolStripMenuItem, "DivisionToolStripMenuItem")
         '
         'AllowNegativesToolStripMenuItem
         '
@@ -491,4 +497,5 @@ Partial Class Form1
     Friend WithEvents SToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripSeparator
     Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents DivisionToolStripMenuItem As ToolStripMenuItem
 End Class

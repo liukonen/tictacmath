@@ -119,17 +119,17 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 105</value>
+    <value>97, 78</value>
   </data>
   <data name="Button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>29, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Button1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="Button1.Text" xml:space="preserve">
-    <value>check</value>
+    <value>✓</value>
   </data>
   <data name="&gt;&gt;Button1.Name" xml:space="preserve">
     <value>Button1</value>
@@ -147,7 +147,7 @@
     <value>32, 78</value>
   </data>
   <data name="TextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>59, 20</value>
   </data>
   <data name="TextBox1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -223,16 +223,16 @@
     <value>NoControl</value>
   </data>
   <data name="Button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 105</value>
+    <value>91, 76</value>
   </data>
   <data name="Button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>29, 23</value>
   </data>
   <data name="Button2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="Button2.Text" xml:space="preserve">
-    <value>check</value>
+    <value>✓</value>
   </data>
   <data name="&gt;&gt;Button2.Name" xml:space="preserve">
     <value>Button2</value>
@@ -250,7 +250,7 @@
     <value>26, 78</value>
   </data>
   <data name="TextBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>59, 20</value>
   </data>
   <data name="TextBox2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -328,16 +328,16 @@
     <value>NoControl</value>
   </data>
   <data name="Button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 105</value>
+    <value>92, 78</value>
   </data>
   <data name="Button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>29, 23</value>
   </data>
   <data name="Button3.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="Button3.Text" xml:space="preserve">
-    <value>check</value>
+    <value>✓</value>
   </data>
   <data name="&gt;&gt;Button3.Name" xml:space="preserve">
     <value>Button3</value>
@@ -355,7 +355,7 @@
     <value>27, 78</value>
   </data>
   <data name="TextBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>59, 20</value>
   </data>
   <data name="TextBox3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -433,16 +433,16 @@
     <value>NoControl</value>
   </data>
   <data name="Button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 105</value>
+    <value>97, 79</value>
   </data>
   <data name="Button4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>29, 23</value>
   </data>
   <data name="Button4.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="Button4.Text" xml:space="preserve">
-    <value>check</value>
+    <value>✓</value>
   </data>
   <data name="&gt;&gt;Button4.Name" xml:space="preserve">
     <value>Button4</value>
@@ -460,7 +460,7 @@
     <value>32, 79</value>
   </data>
   <data name="TextBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>59, 20</value>
   </data>
   <data name="TextBox4.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -538,16 +538,16 @@
     <value>NoControl</value>
   </data>
   <data name="Button5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 105</value>
+    <value>91, 77</value>
   </data>
   <data name="Button5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>29, 23</value>
   </data>
   <data name="Button5.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="Button5.Text" xml:space="preserve">
-    <value>check</value>
+    <value>✓</value>
   </data>
   <data name="&gt;&gt;Button5.Name" xml:space="preserve">
     <value>Button5</value>
@@ -565,7 +565,7 @@
     <value>26, 79</value>
   </data>
   <data name="TextBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>59, 20</value>
   </data>
   <data name="TextBox5.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -643,16 +643,16 @@
     <value>NoControl</value>
   </data>
   <data name="Button6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 105</value>
+    <value>92, 77</value>
   </data>
   <data name="Button6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>29, 23</value>
   </data>
   <data name="Button6.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="Button6.Text" xml:space="preserve">
-    <value>check</value>
+    <value>✓</value>
   </data>
   <data name="&gt;&gt;Button6.Name" xml:space="preserve">
     <value>Button6</value>
@@ -670,7 +670,7 @@
     <value>27, 79</value>
   </data>
   <data name="TextBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>59, 20</value>
   </data>
   <data name="TextBox6.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -748,16 +748,16 @@
     <value>NoControl</value>
   </data>
   <data name="Button7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 105</value>
+    <value>97, 79</value>
   </data>
   <data name="Button7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>29, 23</value>
   </data>
   <data name="Button7.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="Button7.Text" xml:space="preserve">
-    <value>check</value>
+    <value>✓</value>
   </data>
   <data name="&gt;&gt;Button7.Name" xml:space="preserve">
     <value>Button7</value>
@@ -775,7 +775,7 @@
     <value>32, 79</value>
   </data>
   <data name="TextBox7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>59, 20</value>
   </data>
   <data name="TextBox7.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -853,16 +853,16 @@
     <value>NoControl</value>
   </data>
   <data name="Button8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 105</value>
+    <value>91, 76</value>
   </data>
   <data name="Button8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>29, 23</value>
   </data>
   <data name="Button8.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="Button8.Text" xml:space="preserve">
-    <value>check</value>
+    <value>✓</value>
   </data>
   <data name="&gt;&gt;Button8.Name" xml:space="preserve">
     <value>Button8</value>
@@ -880,7 +880,7 @@
     <value>26, 79</value>
   </data>
   <data name="TextBox8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>59, 20</value>
   </data>
   <data name="TextBox8.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -958,16 +958,16 @@
     <value>NoControl</value>
   </data>
   <data name="Button9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 105</value>
+    <value>92, 76</value>
   </data>
   <data name="Button9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>29, 23</value>
   </data>
   <data name="Button9.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="Button9.Text" xml:space="preserve">
-    <value>check</value>
+    <value>✓</value>
   </data>
   <data name="&gt;&gt;Button9.Name" xml:space="preserve">
     <value>Button9</value>
@@ -985,7 +985,7 @@
     <value>27, 79</value>
   </data>
   <data name="TextBox9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>59, 20</value>
   </data>
   <data name="TextBox9.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1080,6 +1080,12 @@
   <data name="MultiplicationToolStripMenuItem.Text" xml:space="preserve">
     <value>M&amp;ultiplication</value>
   </data>
+  <data name="DivisionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="DivisionToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Division</value>
+  </data>
   <data name="TypeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 22</value>
   </data>
@@ -1087,13 +1093,13 @@
     <value>&amp;Type</value>
   </data>
   <data name="YesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>91, 22</value>
   </data>
   <data name="YesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Yes</value>
   </data>
   <data name="NoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>91, 22</value>
   </data>
   <data name="NoToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;No</value>
@@ -1213,6 +1219,12 @@
     <value>MultiplicationToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;MultiplicationToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DivisionToolStripMenuItem.Name" xml:space="preserve">
+    <value>DivisionToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DivisionToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;AllowNegativesToolStripMenuItem.Name" xml:space="preserve">
