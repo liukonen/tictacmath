@@ -19,7 +19,7 @@ Public Class Form1
         Add
         Subtract
         Multiply
-        Divid
+        Divide
     End Enum
 #End Region
 
@@ -31,7 +31,7 @@ Public Class Form1
                     Return "x"c
                 Case GameType.Add
                     Return "+"c
-                Case GameType.Divid
+                Case GameType.Divide
                     Return "÷"c
                 Case Else
                     Return "-"c
@@ -46,7 +46,7 @@ Public Class Form1
                     Return " plus "
                 Case GameType.Multiply
                     Return " times "
-                Case GameType.Divid
+                Case GameType.Divide
                     Return " divided by "
                 Case Else
                     Return " minus "
@@ -67,11 +67,8 @@ Public Class Form1
             ParseNumbers(LabelArray(intValue - 1).Text, Number1, Number2)
             Dim value As Integer = CalculateValue(Number1, Number2)
             voice.Speak(Number1.ToString & GetActiveTypesOperatorName & Number2 & " equals " & value.ToString.Replace("-", "negative "))
-            If value = SelectedValue Then
-                MarkXO(True, intValue)
-            Else
-                MarkXO(False, intValue)
-            End If
+
+            MarkXO((value = SelectedValue), intValue)
         Else
             voice.SpeakAsync("Oops!. Enter the value in the textbox, and try again.")
         End If
@@ -82,32 +79,36 @@ Public Class Form1
 #Region "Supporting Methods"
 
     Private Sub PopulateField()
-        Me.Text = "TicTac" & ActiveGameType.ToString()
+        Me.Text = "Tic Tac " & ActiveGameType.ToString()
         ComputerValues.Clear()
         Player1Values.Clear()
-        For Each t In TextboxArray
-            If t IsNot Nothing Then
-                t.Text = String.Empty
-                t.Visible = True
-            End If
-        Next
-        Dim rand As New Random()
 
+        Dim rand As New Random()
         Dim Max As Integer = Convert.ToInt32(Math.Pow(10, RadioNumberSelected)) - 1
-        For Each L In LabelArray
-            L.ForeColor = Color.Black
-            Dim Number1 As Integer = rand.Next(1, Max)
-            Dim Number2 As Integer = rand.Next(1, Max)
-            If ActiveGameType = GameType.Divid Then Number1 = Number1 * Number2
-            If Not allowNegatives AndAlso Number1 < Number2 Then
-                L.Text = String.Concat(Number2.ToString, Environment.NewLine, GameOperator, Number1.ToString)
-            Else
-                L.Text = String.Concat(Number1.ToString, Environment.NewLine, GameOperator, Number2.ToString)
+
+        For I As Integer = 0 To 8
+            If TextboxArray(I) IsNot Nothing Then
+                TextboxArray(I).Text = String.Empty
+                TextboxArray(I).Visible = True
             End If
-            L.Visible = True
+            Dim Numbers As Integer() = NumberArray(rand, Max)
+            LabelArray(I).ForeColor = Color.Black
+            LabelArray(I).Text = String.Concat(Numbers(0), Environment.NewLine, GameOperator, Numbers(1))
+            ButtonArray(I).Visible = True
         Next
-        Button1.Visible = True : Button2.Visible = True : Button3.Visible = True : Button4.Visible = True : Button5.Visible = True : Button6.Visible = True : Button7.Visible = True : Button8.Visible = True : Button9.Visible = True
     End Sub
+
+    Private Function NumberArray(X As Random, max As Integer) As Integer()
+        Dim value As New KeyValuePair(Of Integer, Integer)(X.Next(1, max), X.Next(1, max))
+        If ActiveGameType = GameType.Divide Then value = New KeyValuePair(Of Integer, Integer)(value.Key * value.Value, value.Value)
+        If ActiveGameType = GameType.Subtract AndAlso Not allowNegatives AndAlso value.Key < value.Value Then value = New KeyValuePair(Of Integer, Integer)(value.Value, value.Key)
+        Return New Integer() {value.Key, value.Value}
+    End Function
+
+    Private Shared Function CoinFlip() As Boolean
+        Dim coin As New Random()
+        Return coin.Next(0, 2) = 1
+    End Function
 
     Private Function CalculateValue(number1 As Integer, number2 As Integer) As Integer
         Select Case ActiveGameType
@@ -115,7 +116,7 @@ Public Class Form1
                 Return number1 + number2
             Case GameType.Multiply
                 Return number1 * number2
-            Case GameType.Divid
+            Case GameType.Divide
                 Return Convert.ToInt32(number1 / number2)
             Case Else
                 Return number1 - number2
@@ -128,13 +129,15 @@ Public Class Form1
         Dim arrayoffset As Integer = ArrayID - 1
 
         TextboxArray(arrayoffset).Visible = False
+
+
         If Player Then
             Player1Values.Add(ArrayID)
             LabelArray(arrayoffset).Text = "X"
             LabelArray(arrayoffset).ForeColor = Color.Blue
             If CheckForWin(Player1Values) Then
                 Win(PlayerWon)
-            Else
+            ElseIf Not CheckTie() Then
                 ComputersTurn()
             End If
         Else
@@ -144,8 +147,18 @@ Public Class Form1
             If CheckForWin(ComputerValues) Then
                 Win(ComputerWon)
             End If
+            CheckTie()
+
         End If
     End Sub
+
+    Private Function CheckTie() As Boolean
+        If ComputerValues.Count + Player1Values.Count = 9 Then
+            Win("Tie Game")
+            Return True
+        End If
+        Return False
+    End Function
 
     Private Sub ComputersTurn()
         Dim X = (From T As TextBox In TextboxArray Where T.Visible = True Select T).ToArray
@@ -158,8 +171,8 @@ Public Class Form1
         Dim TextToParse As String = LabelArray(I).Text
         Dim Number1, Number2 As Integer
         ParseNumbers(TextToParse, Number1, Number2)
-        voice.SpeakAsync("My Pick. " & Number1.ToString & GetActiveTypesOperatorName & Number2 & " equals " & CalculateValue(Number1, Number2).ToString.Replace("-", "negative "))
-        LabelArray(I).Text = "O" : LabelArray(I).ForeColor = Color.Red
+        voice.SpeakAsync(("My Pick. " & Number1.ToString & GetActiveTypesOperatorName & Number2 & " equals " & CalculateValue(Number1, Number2).ToString).Replace("-", "negative "))
+        MarkXO(False, I + 1)
     End Sub
 
     Private Sub ParseNumbers(S As String, ByRef Number1 As Integer, ByRef Number2 As Integer)
@@ -224,7 +237,7 @@ Public Class Form1
         If castSender Is SubtractionToolStripMenuItem Then ActiveGameType = GameType.Subtract
         If castSender Is AdditionToolStripMenuItem Then ActiveGameType = GameType.Add
         If castSender Is MultiplicationToolStripMenuItem Then ActiveGameType = GameType.Multiply
-        If castSender Is DivisionToolStripMenuItem Then ActiveGameType = GameType.Divid
+        If castSender Is DivisionToolStripMenuItem Then ActiveGameType = GameType.Divide
         For Each T As ToolStripMenuItem In arrayList
             T.Checked = (castSender Is T)
         Next
@@ -237,7 +250,6 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         voice.SelectVoiceByHints(Speech.Synthesis.VoiceGender.Female)
         voice.SpeakAsync("Hello, I am ready to play some Tic Tac Math with you today. You start first.")
-
         LabelArray.AddRange({Label1, Label2, Label3, Label4, Label5, Label6, Label7, Label8, Label9})
         TextboxArray.AddRange({TextBox1, TextBox2, TextBox3, TextBox4, TextBox5, TextBox6, TextBox7, TextBox8, TextBox9})
         ButtonArray.AddRange({Button1, Button2, Button3, Button4, Button5, Button6, Button7, Button8, Button9})
