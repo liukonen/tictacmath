@@ -1,4 +1,4 @@
-# About
+#About
 Tic Tac Math is a math game I created for my sister back in around 2003-2004.
 
 #revisions
