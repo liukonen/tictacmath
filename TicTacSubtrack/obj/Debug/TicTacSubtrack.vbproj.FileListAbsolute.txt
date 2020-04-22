@@ -1,0 +1,7 @@
+/Users/lukasliukonen/Git/tictacmath/TicTacSubtrack/bin/Debug/TicTacSubtrack.exe.manifest
+/Users/lukasliukonen/Git/tictacmath/TicTacSubtrack/obj/Debug/TicTacSubtrack.Form1.resources
+/Users/lukasliukonen/Git/tictacmath/TicTacSubtrack/obj/Debug/TicTacSubtrack.Resources.resources
+/Users/lukasliukonen/Git/tictacmath/TicTacSubtrack/obj/Debug/TicTacSubtrack.vbproj.GenerateResource.cache
+/Users/lukasliukonen/Git/tictacmath/TicTacSubtrack/obj/Debug/TicTacSubtrack.vbproj.CoreCompileInputs.cache
+/Users/lukasliukonen/Git/tictacmath/TicTacSubtrack/obj/Debug/TicTacSubtrack.exe
+/Users/lukasliukonen/Git/tictacmath/TicTacSubtrack/obj/Debug/TicTacSubtrack.pdb
