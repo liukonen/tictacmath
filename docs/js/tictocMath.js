@@ -219,7 +219,7 @@ function PlayerMove(){
 
 //Load Items
 
-agentName = GetFromStorage("agentName", "Merilin");
+agentName = GetFromStorage("agentName", "Merlin");
 logNumber = GetFromStorage("logNumber", 1);
 operator = GetFromStorage("operator", "+");
 
