@@ -57,7 +57,7 @@ function LoadPage(OperatorType){
     let Num2 = getRndInteger(1, Math.pow(10, logNumber));
     switch (operator)
     {
-      case "/":
+      case "÷":
       Num1 *= Num2;
       break;
       case "-":
@@ -118,7 +118,7 @@ function CalculateValue(Item){
       return Item.Number1 + Item.Number2;
       case "-":
       return Item.Number1 - Item.Number2;
-      case "*":
+      case "x":
       return Item.Number1 * Item.Number2;
     default:
       return Item.Number1 / Item.Number2;
@@ -130,7 +130,7 @@ function GetOperatorText(){
   switch (operator) {
     case "+": return" plus ";
     case "-":return " minus ";
-    case "*":return " times ";
+    case "x":return " times ";
     default: return " divided by "
   }
 }
