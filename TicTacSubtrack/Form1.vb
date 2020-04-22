@@ -3,7 +3,7 @@
 Public Class Form1
 
 #Region "Private Objects"
-    Private voice As New System.Speech.Synthesis.SpeechSynthesizer()
+    'Private voice As New System.Speech.Synthesis.SpeechSynthesizer()
     Private LabelArray As New Generic.List(Of Label)()
     Private TextboxArray As New Generic.List(Of TextBox)()
     Private ButtonArray As New Generic.List(Of Button)()
@@ -66,11 +66,11 @@ Public Class Form1
             Dim Number1, Number2 As Integer
             ParseNumbers(LabelArray(intValue - 1).Text, Number1, Number2)
             Dim value As Integer = CalculateValue(Number1, Number2)
-            voice.Speak(Number1.ToString & GetActiveTypesOperatorName & Number2 & " equals " & value.ToString.Replace("-", "negative "))
+            'voice.Speak(Number1.ToString & GetActiveTypesOperatorName & Number2 & " equals " & value.ToString.Replace("-", "negative "))
 
             MarkXO((value = SelectedValue), intValue)
         Else
-            voice.SpeakAsync("Oops!. Enter the value in the textbox, and try again.")
+           ' voice.SpeakAsync("Oops!. Enter the value in the textbox, and try again.")
         End If
     End Sub
 
@@ -171,7 +171,7 @@ Public Class Form1
         Dim TextToParse As String = LabelArray(I).Text
         Dim Number1, Number2 As Integer
         ParseNumbers(TextToParse, Number1, Number2)
-        voice.SpeakAsync(("My Pick. " & Number1.ToString & GetActiveTypesOperatorName & Number2 & " equals " & CalculateValue(Number1, Number2).ToString).Replace("-", "negative "))
+       ' voice.SpeakAsync(("My Pick. " & Number1.ToString & GetActiveTypesOperatorName & Number2 & " equals " & CalculateValue(Number1, Number2).ToString).Replace("-", "negative "))
         MarkXO(False, I + 1)
     End Sub
 
@@ -182,7 +182,7 @@ Public Class Form1
     End Sub
 
     Private Sub Win(TextToSpeak As String)
-        voice.SpeakAsync(TextToSpeak)
+        'voice.SpeakAsync(TextToSpeak)
         MsgBox(TextToSpeak)
         PopulateField()
     End Sub
@@ -248,15 +248,15 @@ Public Class Form1
 #Region "Form Events"
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        voice.SelectVoiceByHints(Speech.Synthesis.VoiceGender.Female)
-        voice.SpeakAsync("Hello, I am ready to play some Tic Tac Math with you today. You start first.")
+        'voice.SelectVoiceByHints(Speech.Synthesis.VoiceGender.Female)
+        'voice.SpeakAsync("Hello, I am ready to play some Tic Tac Math with you today. You start first.")
         LabelArray.AddRange({Label1, Label2, Label3, Label4, Label5, Label6, Label7, Label8, Label9})
         TextboxArray.AddRange({TextBox1, TextBox2, TextBox3, TextBox4, TextBox5, TextBox6, TextBox7, TextBox8, TextBox9})
         ButtonArray.AddRange({Button1, Button2, Button3, Button4, Button5, Button6, Button7, Button8, Button9})
         PopulateField()
     End Sub
     Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        voice.Dispose()
+        'voice.Dispose()
     End Sub
 
     Private Sub ExitToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem1.Click
