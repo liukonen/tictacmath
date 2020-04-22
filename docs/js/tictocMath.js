@@ -41,12 +41,6 @@ function swapPlaceHolder(placeHolderNumber){
   LoadPage(operator);
 }
 
-
-function TryTalk(){
-  agentE.speak("I am in control... You are in control!")
-
-}
-
 function MoveAgent(element){
   agentE.stop();
   let rect = element.getBoundingClientRect();
@@ -146,37 +140,39 @@ function CheckForWinItems()
   if (globalItems[0].Checked != "N" && globalItems[0].Checked == globalItems[1].Checked && globalItems[0].Checked == globalItems[2].Checked){return globalItems[0].Checked;}
   if (globalItems[0].Checked != "N" && globalItems[0].Checked == globalItems[3].Checked && globalItems[0].Checked == globalItems[6].Checked){return globalItems[0].Checked;}
   if (globalItems[0].Checked != "N" && globalItems[0].Checked == globalItems[4].Checked && globalItems[0].Checked == globalItems[8].Checked){return globalItems[0].Checked;}
-  if (globalItems[1].Checked != "N" && globalItems[1].Checked == globalItems[4].Checked && globalItems[1].Checked == globalItems[7].Checked){return globalItems[0].Checked;}
-  if (globalItems[2].Checked != "N" && globalItems[2].Checked == globalItems[5].Checked && globalItems[2].Checked == globalItems[8].Checked){return globalItems[0].Checked;}
-  if (globalItems[2].Checked != "N" && globalItems[2].Checked == globalItems[4].Checked && globalItems[2].Checked == globalItems[6].Checked){return globalItems[0].Checked;}
-  if (globalItems[3].Checked != "N" && globalItems[3].Checked == globalItems[4].Checked && globalItems[3].Checked == globalItems[5].Checked){return globalItems[0].Checked;}
-  if (globalItems[6].Checked != "N" && globalItems[6].Checked == globalItems[7].Checked && globalItems[6].Checked == globalItems[8].Checked){return globalItems[0].Checked;}
+  if (globalItems[1].Checked != "N" && globalItems[1].Checked == globalItems[4].Checked && globalItems[1].Checked == globalItems[7].Checked){return globalItems[1].Checked;}
+  if (globalItems[2].Checked != "N" && globalItems[2].Checked == globalItems[5].Checked && globalItems[2].Checked == globalItems[8].Checked){return globalItems[2].Checked;}
+  if (globalItems[2].Checked != "N" && globalItems[2].Checked == globalItems[4].Checked && globalItems[2].Checked == globalItems[6].Checked){return globalItems[2].Checked;}
+  if (globalItems[3].Checked != "N" && globalItems[3].Checked == globalItems[4].Checked && globalItems[3].Checked == globalItems[5].Checked){return globalItems[3].Checked;}
+  if (globalItems[6].Checked != "N" && globalItems[6].Checked == globalItems[7].Checked && globalItems[6].Checked == globalItems[8].Checked){return globalItems[6].Checked;}
   return "";
 }
 function CheckForWin(){
-    let animations = agentE.animations();
+  let animations = agentE.animations();
   let item = CheckForWinItems();
   console.log(item);
   if (item != ""){
-
     if (item == "U"){
       if (animations.includes("Congratulate")){agentE.play("Congratulate");}
       speak("Congratulations, you won!");
-      return true;    LoadPage(operator);
+      LoadPage(operator);
+      return true;
     }
     else{
       if (animations.includes("Think")){agentE.play("Think");}
       if (animations.includes("Wave")){agentE.play("Wave");}
-      speak("Sorry, I won, maybe next time!");    LoadPage(operator);
+      speak("Sorry, I won, maybe next time!");
+      LoadPage(operator);
       return true;
     }
 
   }
   console.log(MoreMoves());
   if (!MoreMoves()){
-    if(animations.includes("Searching")){agentE.play("Searching");}
-    speak("No more moves. Good game."); LoadPage(operator);
-  return true;}
+                    if(animations.includes("Searching")){agentE.play("Searching");}
+                    speak("No more moves. Good game.");
+                    LoadPage(operator);
+                    return true;}
   return false;
 }
 
@@ -184,12 +180,10 @@ function CheckForWin(){
 function MoreMoves(){
   let value = false;
   globalItems.forEach(item => {
-    console.log(item);
-    if (item.Checked == "N"){value = true;}
-  });
+                                console.log(item);
+                                if (item.Checked == "N"){value = true;}
+                              });
   return value;
-
-//  globalItems.forEach((item) => {console.log(item.Checked); if (item.Checked == "N"){return true;}});
 }
 
 function PlayerMove(){
