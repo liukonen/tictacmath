@@ -46,29 +46,6 @@ function swapPlaceHolder(placeHolderNumber){
   LoadPage(operator);
 }
 
-//Button Click event to validate checkbox
-function Check_Click(Number){
-  let NumberToCheck = parseInt($("#txtBox"+ Number.toString()).val());
-  if (!isNaN(NumberToCheck)){
-    let Item = globalItems[Number];
-    let answer = CalculateValue(Item);
-    let opName = GetOperatorText();
-    if (answer == NumberToCheck){
-        Item.Checked = "U";
-        speak("Correct");
-        MarkCard("U", Number);
-      }
-      else{
-          Item.Checked = "C";
-          speak(Item.Number1.toString() + opName + Item.Number2.toString() + " equals " + answer.toString());
-          MarkCard("C", Number);
-        }
-        let win =  CheckForWin();
-        if (!win){  PlayerMove()};
-      }
-      else{speak("you need to enter a value. try again")}
-}
-
 //Main Controller
 function LoadPage(OperatorType){
   globalItems = Array.from(new Array(9),(val,index)=>generateModel(operator, index));
@@ -196,9 +173,47 @@ function MoveAgent(element){
     $("#btn" + cardNumber).prop("disabled", true);
   }
 
+  function Check(Number)
+  {
+    let NumberToCheck = parseInt($("#txtBox"+ Number).val());
+    if (!isNaN(NumberToCheck)){
+      let Item = globalItems[Number];
+      console.log(Item);
+
+      let answer = CalculateValue(Item);
+      let opName = GetOperatorText();
+      if (answer == NumberToCheck){
+          Item.Checked = "U";
+          speak("Correct");
+          MarkCard("U", Number);
+        }
+        else{
+            Item.Checked = "C";
+            speak(Item.Number1.toString() + opName + Item.Number2.toString() + " equals " + answer.toString());
+            MarkCard("C", Number);
+          }
+          let win =  CheckForWin();
+          if (!win){  PlayerMove()};
+        }
+        else{speak("you need to enter a value. try again")}
+ 
+
+  }
+
 //Load Items
 agentName = GetFromStorage("agentName", "Merlin");
 logNumber = GetFromStorage("logNumber", 1);
 operator = GetFromStorage("operator", "+");
+
 LoadPage(operator);
 nextAgent(agentName);
+
+$(document).on('touchstart click', '.checkItem', function(event){
+  console.log(event);
+  if(event.handled === false) return
+  event.stopPropagation();
+  event.preventDefault();
+  event.handled = true;
+  let Num = event.target.id.substring(3);
+  Check(Num);
+});
