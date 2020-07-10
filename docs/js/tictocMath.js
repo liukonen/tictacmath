@@ -217,3 +217,8 @@ $(document).on('touchstart click', '.checkItem', function(event){
   let Num = event.target.id.substring(3);
   Check(Num);
 });
+
+if ("serviceWorker" in navigator) {
+  // register service worker
+  navigator.serviceWorker.register("./sw.js");
+}

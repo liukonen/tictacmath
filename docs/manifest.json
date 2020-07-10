@@ -1,0 +1,51 @@
+{
+    "name": "Tic Tac Math",
+    "short_name" : "TTMath",
+    "start_url": "index.html",
+    "scope" : "./",
+    "icons": [
+        {
+            "src": "./img/icon72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+          },
+          {
+            "src": "./img/icon96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+          },
+          {
+            "src": "./img/icon128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+          },
+          {
+            "src": "./img/icon144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+          },
+          {
+            "src": "./img/icon152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+          },
+          {
+            "src": "./img/icon192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "./img/icon384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+          },
+          {
+            "src": "./img/icon512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+    ],
+    "theme_color": "#000",
+    "background_color": "#FFF",
+    "display": "standalone"
+}
