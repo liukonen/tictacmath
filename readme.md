@@ -1,20 +1,31 @@
-# About
-Tic Tac Math is a math game I created for my sister back in around 2003-2004.
+# Tic Tac Math
 
-# revisions
+Tic Tac Math is a math game that was initially created in 2003-2004 using Visual Basic 6 and Microsoft Agents. It involved a magician character named Merlin who would fly around the screen and play Tic Tac Toe using simple math equations. However, due to the discontinuation of Microsoft Agents, the game has undergone revisions and is now available as a web application.
 
-2020. Because I had the time, and a coworker introduced me to a JS version of MS Agents, I decided to rewrite the entire webpage in Javascript, and make it a Web Application. You can find it at [https://liukonen.github.io/tictacmath/](https://liukonen.github.io/tictacmath/)
+## Web Application
 
-In 2003/4 (while in school) I wrote this in Visual basic 6 and used Microsoft Agents as driving forces for Input and output. 
-(think Clippy, but a magician called Merlin) who would fly around the screen and play tic tac toe, using simple math equations.
-I found the original source code, and re wrote it in .net. Also, sometime around Windows Vista MS agents died off so I am stuck with using 
-only the MS Text to speach engine to talk to you while playing the game. I had 4 different verisons, and since they were all based on the same source, consolidate the logic to one 
-program, with options to switch math types (divide, multiply, add, and subtract) Since the original version was written in VB 6, I have no plans on
-porting this over to c# or another laungage (yet)
+The web version of Tic Tac Math was rewritten entirely in JavaScript, making it accessible and playable directly in a web browser. You can access the game at [https://liukonen.github.io/tictacmath/](https://liukonen.github.io/tictacmath/).
 
-# learnings
-+ MS Agents (discontinued)
-+ Microsoft Text to Speach
-+ Visual Basic 6
-+ Visual Basic .net
-+ installers (both nullsoft at the time, as well as Microsoft one click installer)
+## Features and Revisions
+
+- The original game was built using Visual Basic 6 and Microsoft Agents. However, due to the discontinuation of Microsoft Agents and changes in technology, the game has evolved.
+- In 2020, the game was rewritten in JavaScript to create a web application version.
+- The new version utilizes the MS Text-to-Speech engine to provide audio feedback during gameplay.
+- The game now offers options to switch between different math types, including addition, subtraction, multiplication, and division.
+- The logic from the original multiple versions of the game has been consolidated into a single program, improving maintainability and usability.
+
+## Technologies and Learnings
+
+- The original version of Tic Tac Math was developed using Visual Basic 6 and Microsoft Agents.
+- The revised web application version is built with JavaScript and utilizes the MS Text-to-Speech engine for audio feedback.
+- The developer has gained experience in Visual Basic .NET, installers (such as Nullsoft and Microsoft One-Click Installer), and working with different technologies over the years.
+
+Please note that there are no plans to port the game to another language or platform at this time.
+
+## About the Developer
+
+Tic Tac Math was created by [Luke Liukonen](https://liukonen.dev). The project is a testament to the developer's early exploration of programming and continuous learning and adaptation to changing technologies.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
