@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Tic Tac Math - A fun math game with classic agents">
+    <meta name="author" content="Luke Liukonen">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="apple-touch-icon" href="./img/icon512.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="./favicon.ico">
+    <title>Tic Tac Math</title>
+    <link rel="stylesheet" type="text/css" href="./css/game.css">
+  </head>
+  <body>
+    <div id="game-container" class="game-container">
+      
+      <!-- Agent Stage (Top Row) -->
+      <header class="agent-stage">
+        <div class="agent-area">
+          <div class="agent-placeholder" id="agentPlaceholder">
+            <div class="agent-icon">🧙</div>
+          </div>
+          <div class="agent-info">
+            <div class="agent-name" id="agentName">Merlin</div>
+            <div class="score-display">
+              <span>Player:</span>
+              <span class="score-value" id="playerScore">0</span>
+              <span class="score-vs">vs</span>
+              <span>Agent:</span>
+              <span class="score-value" id="agentScore">0</span>
+            </div>
+          </div>
+        </div>
+        <div class="speech-bubble" id="speechBubble">
+          <div class="speech-content" id="speechContent">
+            Ready to play Tic Tac Math?
+          </div>
+          <div class="speech-tail"></div>
+        </div>
+      </header>
+
+      <!-- Game Arena (Middle Row) -->
+      <main class="game-arena">
+        <div class="board" id="gameBoard">
+          <!-- 9 cells will be generated here -->
+        </div>
+      </main>
+
+      <!-- Control Deck (Bottom Row) -->
+      <footer class="control-deck">
+        <div class="controls-left">
+          <button class="btn btn-reset" id="resetBtn" title="Start a new game">
+            <span class="btn-icon">🔄</span>
+            <span class="btn-label">New Game</span>
+          </button>
+        </div>
+        <div class="controls-center">
+          <div class="config-group">
+            <label for="mathTypeSelect" class="config-label">Math Type</label>
+            <select id="mathTypeSelect" class="config-select">
+              <option value="+">Addition (+)</option>
+              <option value="-">Subtraction (−)</option>
+              <option value="x">Multiplication (×)</option>
+              <option value="÷">Division (÷)</option>
+            </select>
+          </div>
+          <div class="config-group">
+            <label for="complexitySelect" class="config-label">Complexity</label>
+            <select id="complexitySelect" class="config-select">
+              <option value="1">1's</option>
+              <option value="2">10's</option>
+              <option value="3">100's</option>
+            </select>
+          </div>
+          <div class="config-group">
+            <label for="agentSelect" class="config-label">Agent</label>
+            <select id="agentSelect" class="config-select">
+              <option value="Merlin">Merlin</option>
+              <option value="Clippy">Clippy</option>
+              <option value="Bonzi">Bonzi</option>
+              <option value="Genie">Genie</option>
+              <option value="Peedy">Peedy</option>
+              <option value="Rover">Rover</option>
+              <option value="Rocky">Rocky</option>
+              <option value="Genius">Genius</option>
+              <option value="F1">F1</option>
+              <option value="Links">Links</option>
+            </select>
+          </div>
+        </div>
+        <div class="controls-right">
+          <button class="btn btn-info" id="infoBtn" title="Game info">
+            <span class="btn-icon">ℹ️</span>
+          </button>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Modal Overlay for Numeric Input -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modalEquation" class="modal-equation">5 + 3 = ?</h2>
+        </div>
+        <div class="modal-body">
+          <div class="input-display" id="inputDisplay">0</div>
+          <div class="numeric-keypad" id="numericKeypad">
+            <button class="keypad-btn" data-key="1">1</button>
+            <button class="keypad-btn" data-key="2">2</button>
+            <button class="keypad-btn" data-key="3">3</button>
+            <button class="keypad-btn" data-key="4">4</button>
+            <button class="keypad-btn" data-key="5">5</button>
+            <button class="keypad-btn" data-key="6">6</button>
+            <button class="keypad-btn" data-key="7">7</button>
+            <button class="keypad-btn" data-key="8">8</button>
+            <button class="keypad-btn" data-key="9">9</button>
+            <button class="keypad-btn" data-key="0">0</button>
+            <button class="keypad-btn keypad-delete" id="deleteBtn" title="Delete">⌫</button>
+            <button class="keypad-btn keypad-clear" id="clearBtn" title="Clear all">C</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-modal-secondary" id="modalCancelBtn">Cancel</button>
+          <button class="btn btn-modal-primary" id="modalSubmitBtn">Check Answer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div class="modal-overlay" id="infoModal" style="display: none;">
+      <div class="modal-content modal-info">
+        <div class="modal-header">
+          <h2>Tic Tac Math</h2>
+        </div>
+        <div class="modal-body">
+          <p>A playful math game where you race against a classic Microsoft Agent to solve Tic Tac Toe with math!</p>
+          <p><strong>How to Play:</strong></p>
+          <ul>
+            <li>Tap any empty cell to answer the math equation</li>
+            <li>Get three in a row (horizontal, vertical, or diagonal) to win</li>
+            <li>The agent will take its turn if you don't win first</li>
+          </ul>
+          <p><strong>Controls:</strong></p>
+          <ul>
+            <li>Use the numeric keypad to enter answers</li>
+            <li>Customize game settings in the control deck</li>
+          </ul>
+          <p style="margin-top: 2rem; font-size: 0.875rem; opacity: 0.7;">
+            Tic Tac Math © 2024 | Original game by Luke Liukonen<br>
+            <a href="https://github.com/liukonen/tictacmath" style="color: inherit;">View on GitHub</a>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-modal-primary" id="closeInfoBtn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/game.js"></script>
+    <script src="./clippy/clippy.mod.min.js"></script>
+    <script src="./js/agent-manager.js"></script>
+  </body>
+</html>
